@@ -1,0 +1,35 @@
+nav {
+  background-color: #0c3663; /* Azul */
+  padding: 20px;
+  border-radius: 25px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.active {
+  font-weight: bold;
+}
+
+label {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
