@@ -1,9 +1,25 @@
-<nav>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a routerLink="/publicar-pasantia" href="#">Publicar pasantia</a></li>
-      <li><a href="#">Quiénes somos</a></li>
-      <li><a href="#">Contáctanos</a></li>
-      <li><a routerLink="/login" href="#">Iniciar sesión</a></li>
-    </ul>
-  </nav>
+
+<nav class="menus">
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <li><a routerLink="/publicar-pasantia" href="#">Publicar pasantia</a></li>
+    <li><a href="#">Quiénes somos</a></li>
+    <li><a href="#">Contáctanos</a></li>
+    <li><a routerLink="/login" href="#">Iniciar sesión</a></li>
+  </ul>
+</nav>
+<div class="image-container">
+  <div class="slider">
+    <div class="slider-container">
+      <img [src]="img[currentSlide]" alt="Imagen del carrusel">
+    </div>
+  
+    <div class="slider-indicators">
+      <div class="indicator-container">
+        <span *ngFor="let image of img; let i=index"
+              [class.active]="i === currentSlide"
+              (click)="goToSlide(i)"></span>
+      </div>
+    </div>
+  </div>
+</div>

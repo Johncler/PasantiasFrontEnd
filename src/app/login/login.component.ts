@@ -18,4 +18,7 @@ export class LoginComponent {
     // Lógica para recuperar la contraseña
     // Puedes agregar tu propia lógica aquí
   }
+  register() {
+    
+  }
 }
