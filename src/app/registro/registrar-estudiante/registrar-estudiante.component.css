@@ -12,14 +12,32 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
-  .title{
-    color: #0056b3;
+.title{
+    color: #090909;
     text-align: center;
   }
   
-  .form-group {
-    margin-bottom: 20px;
-  }
+.form-group {
+    margin-bottom: 15px;
+    
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.form-group input[type="radio"] {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.form-group input[type="radio"] + label {
+  display: inline-block;
+  margin-right: 15px;
+  text-align: center;
+}
   
   label {
     display: block;
@@ -33,6 +51,7 @@ form {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 15px;
   }
   
   input[type="radio"] {
