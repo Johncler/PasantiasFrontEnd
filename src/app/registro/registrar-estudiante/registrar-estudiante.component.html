@@ -1,6 +1,91 @@
-<div class=»imagelinks»>
-    <div class=»links»>
-    <a href=»URL1″>Inicio</a>|<a href=»URL2″>Bio</a>|<a href=»URL3″>Contacto</a>
-    </div>
-    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" />
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <form>
+        <h1 class="title">REGISTRAR ESTUDIANTE</h1>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre">
+        </div>
+      
+        <div class="form-group">
+          <label for="apellido1">Primer Apellido</label>
+          <input type="text" id="apellido1" name="apellido1">
+        </div>
+      
+        <div class="form-group">
+          <label for="apellido2">Segundo Apellido</label>
+          <input type="text" id="apellido2" name="apellido2">
+        </div>
+      
+        <div class="form-group">
+          <label for="tipoDocumento">Tipo de Documento</label>
+          <select id="tipoDocumento" name="tipoDocumento">
+            <option value="dni">DNI</option>
+            <option value="carnet">Carnet de Identidad</option>
+            <option value="pasaporte">Pasaporte</option>
+          </select>
+        </div>
+      
+        <div class="form-group">
+          <label for="nroDocumento">Nro. Documento</label>
+          <input type="text" id="nroDocumento" name="nroDocumento">
+        </div>
+      
+        <div class="form-group">
+          <label for="complementario">Complementario</label>
+          <input type="text" id="complementario" name="complementario">
+        </div>
+      
+        <div class="form-group">
+          <label>Vinculación con la UCB</label>
+          <div>
+            <input type="radio" id="estudiante" name="vinculacion" value="estudiante">
+            <label for="estudiante">Estudiante</label>
+          </div>
+          <div>
+            <input type="radio" id="egresado" name="vinculacion" value="egresado">
+            <label for="egresado">Egresado</label>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label for="carrera">Carrera</label>
+          <select id="carrera" name="carrera">
+            <option value="carrera2">Biomedicina</option>
+            <option value="carrera3">Odontología</option>
+            <option value="carrera3">Oftalmología</option>
+            <option value="carrera3">Psiquiatría</option>
+            <option value="carrera3">Ingenierías Agroindustrial</option>
+            <option value="carrera3">Ingenierías de Alimentos</option>
+            <option value="carrera3">Ingenierías en Telecomunicaciones</option>
+            <option value="carrera3">Ingenierías de Sistemas Informáticos</option>
+            <option value="carrera3">Ingeniería Química</option>
+            <option value="carrera3">Ingeniería Mecatrónica</option>
+            <option value="carrera3">Ingeniería Biomédica</option>
+            <option value="carrera3"> Contaduría Publica</option>
+            <option value="carrera3">Auditoria</option>
+            <option value="carrera3">Administración Turísticas</option>
+            <option value="carrera3">Economía</option>
+            <option value="carrera3">Derecho</option>
+            <option value="carrera3">Arquitectura</option>
+            <option value="carrera3">Psiquiatría</option>
+          </select>
+        </div>
+      
+        <div class="form-group">
+          <label for="sede">Sede</label>
+          <select id="sede" name="sede">
+            <option value="sede1">La Paz</option>
+            <option value="sede2">Santa Cruz</option>
+            <option value="sede3">Cochabamba</option>
+            <option value="sede3">Tarija</option>
+          </select>
+        </div>
+      
+        <button type="submit">Registrar</button>
+      </form>
+      
+</body>
+</html>
