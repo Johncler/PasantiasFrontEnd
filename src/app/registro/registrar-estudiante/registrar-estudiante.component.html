@@ -1,92 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+  <body>
+    <form [formGroup]="estudianteForm" (ngSubmit)="registrar()">
+      <h1 class="title">REGISTRAR ESTUDIANTE</h1>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" formControlName="nombre" name="nombre" />
+      </div>
 
-<body>
-    <form>
-        <h1 class="title">REGISTRAR ESTUDIANTE</h1>
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre">
+      <div class="form-group">
+        <label for="primer_apellido">Primer Apellido</label>
+        <input type="text" id="primer_apellido" formControlName="primer_apellido" name="primer_apellido" />
+      </div>
+
+      <div class="form-group">
+        <label for="segundo_apellido">Segundo Apellido</label>
+        <input type="text" id="segundo_apellido" formControlName="segundo_apellido" name="segundo_apellido" />
+      </div>
+
+      <div class="form-group">
+        <label for="complemento">Correo</label>
+        <input type="text" id="correo" formControlName="correo" name="correo" />
+      </div>
+
+      <div class="form-group">
+        <label for="tipo_documento">Tipo de Documento</label>
+        <select id="tipo_documento" formControlName="tipo_documento" name="tipo_documento">
+          <option>Selecione una opcion</option>
+          <option value="dni">DNI</option>
+          <option value="carnet">Carnet de Identidad</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="documento">Nro. Documento</label>
+        <input type="text" id="documento" formControlName="documento" name="documento" />
+      </div>
+
+      <div class="form-group">
+        <label for="complemento">Complementario</label>
+        <input type="text" id="complemento" formControlName="complemento" name="complemento" />
+      </div>
+
+      <div class="form-group">
+        <label>Vinculación con la UCB</label>
+        <div>
+          <input
+            type="radio"
+            id="estudiante"
+            formControlName="vinculacion_ucb" name="vinculacion_ucb"
+            value="estudiante"
+          />
+          <label for="estudiante">Estudiante</label>
+          <input
+            type="radio"
+            id="egresado"
+            formControlName="vinculacion_ucb" name="vinculacion_ucb"
+            value="egresado"
+          />
+          <label for="egresado">Egresado</label>
         </div>
-      
-        <div class="form-group">
-          <label for="apellido1">Primer Apellido</label>
-          <input type="text" id="apellido1" name="apellido1">
-        </div>
-      
-        <div class="form-group">
-          <label for="apellido2">Segundo Apellido</label>
-          <input type="text" id="apellido2" name="apellido2">
-        </div>
-      
-        <div class="form-group">
-          <label for="tipoDocumento">Tipo de Documento</label>
-          <select id="tipoDocumento" name="tipoDocumento">
-            <option>Selecione una opcion</option>
-            <option value="dni">DNI</option>
-            <option value="carnet">Carnet de Identidad</option>
-            <option value="pasaporte">Pasaporte</option>
-          </select>
-        </div>
-      
-        <div class="form-group">
-          <label for="nroDocumento">Nro. Documento</label>
-          <input type="text" id="nroDocumento" name="nroDocumento">
-        </div>
-      
-        <div class="form-group">
-          <label for="complementario">Complementario</label>
-          <input type="text" id="complementario" name="complementario">
-        </div>
-      
-        <div class="form-group">
-          <label>Vinculación con la UCB</label>
-          <div>
-            <input type="radio" id="estudiante" name="vinculacion" value="estudiante">
-            <label for="estudiante">Estudiante</label>
-            <input type="radio" id="egresado" name="vinculacion" value="egresado">
-            <label for="egresado">Egresado</label>
-          </div>
-        </div>
-      
-        <div class="form-group">
-          <label for="carrera">Carrera</label>
-          <select id="carrera" name="carrera">
-            <option>Selecione una opcion</option>
-            <option value="carrera2">Biomedicina</option>
-            <option value="carrera3">Odontología</option>
-            <option value="carrera3">Oftalmología</option>
-            <option value="carrera3">Psiquiatría</option>
-            <option value="carrera3">Ingenierías Agroindustrial</option>
-            <option value="carrera3">Ingenierías de Alimentos</option>
-            <option value="carrera3">Ingenierías en Telecomunicaciones</option>
-            <option value="carrera3">Ingenierías de Sistemas Informáticos</option>
-            <option value="carrera3">Ingeniería Química</option>
-            <option value="carrera3">Ingeniería Mecatrónica</option>
-            <option value="carrera3">Ingeniería Biomédica</option>
-            <option value="carrera3"> Contaduría Publica</option>
-            <option value="carrera3">Auditoria</option>
-            <option value="carrera3">Administración Turísticas</option>
-            <option value="carrera3">Economía</option>
-            <option value="carrera3">Derecho</option>
-            <option value="carrera3">Arquitectura</option>
-            <option value="carrera3">Psiquiatría</option>
-          </select>
-        </div>
-      
-        <div class="form-group">
-          <label for="sede">Sede</label>
-          <select id="sede" name="sede">
-            <option>Selecione una opcion</option>
-            <option value="sede1">La Paz</option>
-            <option value="sede2">Santa Cruz</option>
-            <option value="sede3">Cochabamba</option>
-            <option value="sede3">Tarija</option>
-          </select>
-        </div>
-      
-        <button type="submit">Registrar</button>
-      </form>
-      
-</body>
+      </div>
+
+      <div class="form-group">
+        <label for="carrera">Carrera</label>
+        <select id="carrera" formControlName="carrera" name="carrera">
+          <option>Selecione una opcion</option>
+          <option value="carrera2">Biomedicina</option>
+          <option value="carrera3">Odontología</option>
+          <option value="carrera3">Oftalmología</option>
+          <option value="carrera3">Psiquiatría</option>
+          <option value="carrera3">Ingenierías Agroindustrial</option>
+          <option value="carrera3">Ingenierías de Alimentos</option>
+          <option value="carrera3">Ingenierías en Telecomunicaciones</option>
+          <option value="carrera3">Ingenierías de Sistemas Informáticos</option>
+          <option value="carrera3">Ingeniería Química</option>
+          <option value="carrera3">Ingeniería Mecatrónica</option>
+          <option value="carrera3">Ingeniería Biomédica</option>
+          <option value="carrera3">Contaduría Publica</option>
+          <option value="carrera3">Auditoria</option>
+          <option value="carrera3">Administración Turísticas</option>
+          <option value="carrera3">Economía</option>
+          <option value="carrera3">Derecho</option>
+          <option value="carrera3">Arquitectura</option>
+          <option value="carrera3">Psiquiatría</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="anio">Año</label>
+        <input type="text" id="anio" formControlName="anio" name="anio" />
+      </div>
+      <div class="form-group">
+        <label for="semestre">Semestre</label>
+        <input type="text" id="semestre" formControlName="semestre" name="semestre" />
+      </div>
+
+      <div class="form-group">
+        <label for="sede">Sede</label>
+        <select id="sede" formControlName="sede" name="sede">
+          <option>Selecione una opcion</option>
+          <option value="sede1">La Paz</option>
+          <option value="sede2">Santa Cruz</option>
+          <option value="sede3">Cochabamba</option>
+          <option value="sede3">Tarija</option>
+        </select>
+      </div>
+
+      <button type="submit">Registrar</button>
+    </form>
+  </body>
 </html>

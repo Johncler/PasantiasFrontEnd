@@ -1,28 +1,38 @@
-
-
 <div class="image-container">
   <div class="slider">
     <div class="slider-container">
-      <img [src]="img[currentSlide]" alt="Imagen del carrusel">
+      <img [src]="img[currentSlide]" alt="Imagen del carrusel" />
     </div>
-  
+
     <div class="slider-indicators">
       <div class="indicator-container">
-        <span *ngFor="let image of img; let i=index"
-              [class.active]="i === currentSlide"
-              (click)="goToSlide(i)"></span>
+        <span
+          *ngFor="let image of img; let i = index"
+          [class.active]="i === currentSlide"
+          (click)="goToSlide(i)"
+        ></span>
       </div>
     </div>
   </div>
-  
 </div>
 <nav class="menus">
   <ul>
     <li><a href="#">Inicio</a></li>
-    <li><a routerLink="/publicar-pasantia" href="#">Publicar pasantia</a></li>
-    <li><a href="#">Quiénes somos</a></li>
-    <li><a href="#">Contáctanos</a></li>
-    <li><a routerLink="/login" href="#">Iniciar sesión</a></li>
+    <li *ngFor="let item of menu_usuarios[tipo_usuario]">
+      <a [routerLink]="[item.url]" *ngIf="item.url != 'logout'">{{
+        item.label
+      }}</a>
+      <a href="" *ngIf="item.url == 'logout'" (click)="cerrarSesion()">{{
+        item.label
+      }}</a>
+    </li>
+    <li *ngIf="tipo_usuario != 'GUEST'">
+      <span class="user_name">{{ user.correo }}</span>
+    </li>
+    <!-- <li><a routerLink="/publicar-pasantia" href="#">Publicar pasantia</a></li> -->
+    <!-- <li><a href="#">Quiénes somos</a></li> -->
+    <!-- <li><a href="#">Contáctanos</a></li> -->
+    <!-- <li><a routerLink="/login" href="#">Iniciar sesión</a></li> -->
   </ul>
 </nav>
 
@@ -30,18 +40,61 @@
   <div class="titleP">
     <h1>PASANTIAS EN BOLIVIA</h1>
   </div>
-  <div class="container">
-    <div class="column left">
+  <div class="container contenedor_pasantia" *ngIf="pasantias.length > 0">
+    <div
+      class="column left pasantia"
+      *ngFor="let item of pasantias; let i = index"
+    >
       <!-- Contenido de la columna izquierda -->
-      <h2>Columna Izquierda</h2>
-      <p>Contenido de la columna izquierda...</p>
-    </div>
-    <div class="column right">
-      <!-- Contenido de la columna derecha -->
-      <h2>Columna Derecha</h2>
-      <p>Contenido de la columna derecha...</p>
+      <h2>{{ item.titulo }}</h2>
+      <p>
+        <strong>Requerimiento:</strong>
+        {{ item.requerimiento }}
+      </p>
+      <p>
+        <strong>Conocimiento:</strong>
+        {{ item.conocimiento }}
+      </p>
+      <p>
+        <strong>Ciudad:</strong>
+        {{ item.ciudad }}
+      </p>
+      <p>
+        <strong>Carrera:</strong>
+        {{ item.carrera }}
+      </p>
+      <p>
+        <strong>Tiempo:</strong>
+        {{ item.tiempo }}
+      </p>
+      <p>
+        <strong>Beneficios:</strong>
+        {{ item.beneficios }}
+      </p>
+      <p>
+        <strong>Fecha:</strong>
+        {{ item.fecha_limite }}
+      </p>
+      <p>
+        <strong>Duración:</strong>
+        {{ item.duracion }}
+      </p>
+      <p>
+        <strong>Empresa</strong>
+        {{ item.empresa.nombre }}
+      </p>
     </div>
   </div>
+  <div
+    class="container contenedor_pasantia"
+    *ngIf="pasantias.length == 0"
+    style="
+      justify-content: center;
+      padding: 20px 0px;
+      width: 100%;
+      background: rgb(152, 152, 152);
+    "
+  >
+    No se encontrarón registros...
+  </div>
 </body>
-
-

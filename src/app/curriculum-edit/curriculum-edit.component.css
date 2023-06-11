@@ -1,0 +1,116 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80");
+    background-size: cover;
+    background-position: center;
+  }
+  nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #007bff;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  form {
+    padding: 20px 50px; /* Ajusta los valores de padding según tu preferencia */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 800px; /* Ajusta el ancho del formulario según tu preferencia */
+    background-color: #405468;
+    margin: 0 auto;
+  }
+  
+  .title {
+    color: #f2efef;
+    text-align: center;
+    font-style: normal;
+    font-size: 35px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 15px;
+  }
+  .radio {
+    color: rgb(241, 240, 240);
+    font-size: 20px;
+    padding: 5px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #f1f1f1;
+    font-style: normal;
+    font-size: 20px;
+  }
+  
+  input[type="text"],
+  textarea,
+  select,
+  input[type="date"] {
+    width: 100%;
+    padding: 15px;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  button {
+    display: block;
+    margin: auto;
+    padding: 15px 30px;
+    background-color: #f5b504;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  button:hover {
+    background-color: #f39c00;
+  }
+  
+  button:active {
+    box-shadow: none;
+  }
+  
+  small{
+    color:white;
+  }
+  
+  strong{
+    font-size: 1.3em;
+    color:white;
+  }

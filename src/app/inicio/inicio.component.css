@@ -112,3 +112,13 @@ button {
 button:hover {
   transform: scale(1.02);
 }
+.user_name {
+  color: white;
+  font-size: 1.2em;
+}
+
+.contenedor_pasantia .pasantia {
+  border: solid 3px #0c3663;
+  margin-top: 3px;
+  color: black;
+}

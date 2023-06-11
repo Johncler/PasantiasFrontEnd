@@ -6,7 +6,8 @@ import { PublicarPasantiaComponent } from './publicar-pasantia/publicar-pasantia
 import { RegistroComponent } from './registro/registro.component';
 import { RegistrarEmpresaComponent } from './registro/registrar-empresa/registrar-empresa.component';
 import { RegistrarEstudianteComponent } from './registro/registrar-estudiante/registrar-estudiante.component';
-
+import { CurriculumComponent } from './curriculum/curriculum.component';
+import { CurriculumEditComponent } from './curriculum-edit/curriculum-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -15,8 +16,9 @@ const routes: Routes = [
   { path: 'publicar-pasantia', component: PublicarPasantiaComponent},
   { path: 'registro', component: RegistroComponent},
   { path: 'registrar-empresa', component: RegistrarEmpresaComponent},
-  { path: 'registrar-estudiante', component: RegistrarEstudianteComponent}
-
+  { path: 'registrar-estudiante', component: RegistrarEstudianteComponent},
+  { path: 'curriculum', component: CurriculumComponent },
+  { path: 'curriculum/:id', component: CurriculumEditComponent }
 ];
 
 @NgModule({

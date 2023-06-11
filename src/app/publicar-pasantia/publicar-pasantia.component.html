@@ -1,106 +1,125 @@
-<app-inicio></app-inicio>
+<form [formGroup]="pasantiaForm" (ngSubmit)="registrar()">
+  <h1 class="title">PUBLICAR PASANTÍAS</h1>
 
-<!DOCTYPE html>
-<html lang="en">
-<nav>
-  <ul>
-    <li><a href="#">Mi cuenta</a></li>
-    <li><a routerLink="/publicar-pasantia" href="#">Salir</a></li>
-  </ul>
-  <ul>
-    <li><a href="#">Inicio</a></li>
-    <li><a href="#">Buscar pasantia</a></li>
-    <li><a routerLink="/login" href="#">Publicar CV</a></li>
-  </ul>
-</nav>
-<body>
-  
-<form>
-  <h1 class="title"> PUBLICAR PASANTÍAS</h1>  
-    
-    <div class="form-group">
-      <label for="titulo">Título de pasantía</label>
-      <input type="text" id="titulo" name="titulo" [(ngModel)]="tituloPasantia">
+  <div class="form-group">
+    <label for="titulo">Título de pasantía</label>
+    <input type="text" id="titulo" name="titulo" formControlName="titulo" />
+  </div>
+  <div class="form-group">
+    <label for="requerimiento">Requerimientos de pasantía</label>
+    <textarea
+      id="requerimiento"
+      name="requerimiento"
+      formControlName="requerimiento"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="conocimiento">Conocimientos</label>
+    <input
+      type="text"
+      id="conocimiento"
+      name="conocimiento"
+      formControlName="conocimiento"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="ciudad">Ciudad</label>
+    <select id="ciudad" name="ciudad" formControlName="ciudad">
+      <option value="Beni">Beni</option>
+      <option value="Chuquisaca">Chuquisaca</option>
+      <option value="Cochabamba">Cochabamba</option>
+      <option value="La Paz">La Paz</option>
+      <option value="Oruro">Oruro</option>
+      <option value="Pando">Pando</option>
+      <option value="Potosí">Potosí</option>
+      <option value="Santa Cruz">Santa Cruz</option>
+      <option value="Tarija">Tarija</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="carrera">Carrera</label>
+    <select
+      id="carrera"
+      name="carrera"
+      formControlName="carrera"
+    >
+      <option value="Enfermería">Enfermería</option>
+      <option value="Biomedicina">Biomedicina</option>
+      <option value="Odontología">Odontología</option>
+      <option value="Oftalmología">Oftalmología</option>
+      <option value="Psiquiatría">Psiquiatría</option>
+      <option value="Ingenierías Agroindustrial">
+        Ingenierías Agroindustrial
+      </option>
+      <option value="Ingenierías de Alimentos">Ingenierías de Alimentos</option>
+      <option value="Ingenierías en Telecomunicaciones">
+        Ingenierías en Telecomunicaciones
+      </option>
+      <option value="Ingenierías de Sistemas Informáticos">
+        Ingenierías de Sistemas Informáticos
+      </option>
+      <option value="Ingeniería Química">Ingeniería Química</option>
+      <option value="Ingeniería Mecatrónica">Ingeniería Mecatrónica</option>
+      <option value="Ingeniería Biomédica">Ingeniería Biomédica</option>
+      <option value="Contaduría Publica">Contaduría Publica</option>
+      <option value="Auditoria">Auditoria</option>
+      <option value="Administración Turísticas">
+        Administración Turísticas
+      </option>
+      <option value="Economía">Economía</option>
+      <option value="Derecho">Derecho</option>
+      <option value="Arquitectura">Arquitectura</option>
+      <option value="Psiquiatría">Psiquiatría</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="tiempo">Tiempo de pasantía</label>
+    <select id="tiempo" name="tiempo" formControlName="tiempo">
+      <option value="Tiempo completo">Tiempo completo</option>
+      <option value="Medio tiempo">Medio tiempo</option>
+    </select>
+  </div>
+
+  <div class="radio">
+    <label for="beneficios">Beneficios</label>
+    <div>
+      <input
+        type="radio"
+        id="beneficios"
+        name="beneficios"
+        formControlName="beneficios"
+        value="conBeneficios"
+      />
+      Con beneficios
+      <input
+        type="radio"
+        id="sinBeneficios"
+        name="beneficios"
+        formControlName="beneficios"
+        value="sinBeneficios"
+      />
+      Sin beneficios
     </div>
-  
-    <div class="form-group">
-      <label for="requerimientos">Requerimientos de pasantía</label>
-      <textarea id="requerimientos" name="requerimientos" [(ngModel)]="requerimientosPasantia"></textarea>
-    </div>
-  
-    <div class="form-group">
-      <label for="conocimientos">Conocimientos</label>
-      <input type="text" id="conocimientos" name="conocimientos" [(ngModel)]="conocimientos">
-    </div>
-  
-    <div class="form-group">
-      <label for="ciudad">Ciudad</label>
-      <select id="ciudad" name="ciudad" [(ngModel)]="ciudad">
-        <option value="ciudad1">Beni</option>
-        <option value="ciudad1">Chuquisaca</option>
-        <option value="ciudad1">Cochabamba</option>
-        <option value="ciudad2">La Paz</option>
-        <option value="ciudad3">Oruro</option>
-        <option value="ciudad3">Pando</option>
-        <option value="ciudad3">Potosí</option>
-        <option value="ciudad3">Santa Cruz</option>
-        <option value="ciudad3">Tarija</option>
-      </select>
-    </div>
-  
-    <div class="form-group">
-      <label for="carrera">Carrera</label>
-      <select id="carrera" name="carrera" [(ngModel)]="carrera">        
-        <option value="carrera1">Enfermería</option>
-        <option value="carrera2">Biomedicina</option>
-        <option value="carrera3">Odontología</option>
-        <option value="carrera3">Oftalmología</option>
-        <option value="carrera3">Psiquiatría</option>
-        <option value="carrera3">Ingenierías Agroindustrial</option>
-        <option value="carrera3">Ingenierías de Alimentos</option>
-        <option value="carrera3">Ingenierías en Telecomunicaciones</option>
-        <option value="carrera3">Ingenierías de Sistemas Informáticos</option>
-        <option value="carrera3">Ingeniería Química</option>
-        <option value="carrera3">Ingeniería Mecatrónica</option>
-        <option value="carrera3">Ingeniería Biomédica</option>
-        <option value="carrera3"> Contaduría Publica</option>
-        <option value="carrera3">Auditoria</option>
-        <option value="carrera3">Administración Turísticas</option>
-        <option value="carrera3">Economía</option>
-        <option value="carrera3">Derecho</option>
-        <option value="carrera3">Arquitectura</option>
-        <option value="carrera3">Psiquiatría</option>
-      </select>
-    </div>
-  
-    <div class="form-group">
-      <label for="tiempo">Tiempo de pasantía</label>
-      <select id="tiempo" name="tiempo" [(ngModel)]="tiempoPasantia">
-        <option value="tiempo1">Tiempo completo</option>
-        <option value="tiempo2">Medio tiempo </option>
-      </select>
-    </div>
-  
-    <div class="radio">
-      <label for="beneficios">Beneficios</label>
-      <div>
-        <input type="radio" id="beneficios" name="beneficios" value="conBeneficios" [(ngModel)]="beneficios"> Con beneficios
-        <input type="radio" id="sinBeneficios" name="beneficios" value="sinBeneficios" [(ngModel)]="beneficios"> Sin beneficios
-      </div>
-    </div>
-  
-    <div class="form-group">
-      <label for="fecha">Fecha</label>
-      <input type="date" id="fecha" name="fecha" [(ngModel)]="fecha">
-    </div>
-  
-    <div class="form-group">
-      <label for="duracion">Duración de pasantía</label>
-      <input type="text" id="duracion" name="duracion" [(ngModel)]="duracionPasantia">
-    </div>
-  
-    <button type="button" (click)="agregar()">Agregar</button>
-  </form>
-  
-</body>
-</html>
+  </div>
+
+  <div class="form-group">
+    <label for="fecha">Fecha</label>
+    <input type="date" id="fecha_limite" name="fecha_limite" formControlName="fecha_limite" />
+  </div>
+
+  <div class="form-group">
+    <label for="duracion">Duración de pasantía</label>
+    <input
+      type="text"
+      id="duracion"
+      name="duracion"
+      formControlName="duracion"
+    />
+  </div>
+
+  <button type="submit">Agregar</button>
+</form>

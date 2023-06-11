@@ -1,0 +1,76 @@
+<form (ngSubmit)="registrar()">
+    <h1 class="title">MI CURRICULUM</h1>
+  
+    <div class="form-group">
+      <strong>Su formación y experiencia</strong>
+    </div>
+    <div class="form-group">
+      <label for="titulo">Cargar curriculum</label>
+      <input type="file" (change)="onFileSelected($event)" />
+      <br />
+      <br />
+      <a
+        [href]="
+          'http://localhost:8080/api/v1/curriculum/archivos/' +
+          oCurriculum.archivo
+        "
+        target="_blank"
+        style="color: white"
+        >Descargar curriculum actual</a
+      >
+    </div>
+    <!-- Ejemplo para experiencia académica -->
+    <div class="form-group">
+      <label for="experiencia_academica">Experiencia académica</label>
+      <small
+        >Puedes reportar más de una experiencia académica si es necesario</small
+      >
+      <div *ngFor="let experiencia of oExperienciaAcademicas; let i = index">
+        <input
+          type="text"
+          [(ngModel)]="experiencia.formacion"
+          [name]="'formacion_academica_' + i"
+          [placeholder]="'Experiencia ' + (i + 1)"
+        />
+        <button type="button" (click)="eliminarAcademica(i)">-</button>
+      </div>
+      <button type="button" (click)="agregarAcademica()">+</button>
+    </div>
+  
+    <div class="form-group">
+      <label for="experiencia_profesional">Experiencia profesional</label>
+      <small
+        >Puedes reportar más de una experiencia profesional si es necesario</small
+      >
+      <div *ngFor="let experiencia of oExperienciaProfesionals; let i = index">
+        <input
+          type="text"
+          [(ngModel)]="experiencia.formacion"
+          [name]="'formacion_profesional_' + i"
+          [placeholder]="'Experiencia ' + (i + 1)"
+        />
+        <button type="button" (click)="eliminarProfesional(i)">-</button>
+      </div>
+      <button type="button" (click)="agregarProfesional()">+</button>
+    </div>
+  
+    <div class="form-group">
+      <label for="idioma">Idiomas</label>
+      <small>Puedes reportar más de un idioma si es necesario</small>
+      <div *ngFor="let idioma of oIdiomas; let i = index">
+        <input
+          type="text"
+          [(ngModel)]="idioma.idioma"
+          [name]="'idioma_' + i"
+          [placeholder]="'Idioma ' + (i + 1)"
+        />
+        <button type="button" (click)="eliminarIdioma(i)">-</button>
+      </div>
+      <button type="button" (click)="agregarIdioma()">+</button>
+    </div>
+    <button type="submit">Actualizar curriculum</button>
+    <a routerLink="/inicio" style="color: black; color: white; font-size: 1.2em"
+      >Volver al inicio</a
+    >
+  </form>
+  
